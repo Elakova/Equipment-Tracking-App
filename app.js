@@ -8,7 +8,8 @@
 // ── Constants ────────────────────────────────
 const STORAGE_KEY    = 'holos_equipment_log';
 const PW_KEY         = 'holos_admin_pw';
-const SCRIPT_URL_KEY = 'holos_script_url';
+const SCRIPT_URL_KEY    = 'holos_script_url';
+const DEFAULT_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycby6vl87SRH-CtrFW1LSNGhb3bpHaoB9ucxUeNarSsGt2YEabIT7m9vNQ_w82ZVUJdLG/exec';
 const EQ_CACHE_KEY   = 'holos_equipment_cache';
 const DEFAULT_PW     = 'holos2024';
 
@@ -17,7 +18,7 @@ const loadLog      = ()  => { try { return JSON.parse(localStorage.getItem(STORA
 const saveLog      = (d) => localStorage.setItem(STORAGE_KEY, JSON.stringify(d));
 const getPassword  = ()  => localStorage.getItem(PW_KEY) || DEFAULT_PW;
 const setPassword  = (p) => localStorage.setItem(PW_KEY, p);
-const getScriptUrl = ()  => localStorage.getItem(SCRIPT_URL_KEY) || '';
+const getScriptUrl = ()  => localStorage.getItem(SCRIPT_URL_KEY) || DEFAULT_SCRIPT_URL;
 const setScriptUrl = (u) => localStorage.setItem(SCRIPT_URL_KEY, u);
 const getEqCache   = ()  => { try { return JSON.parse(localStorage.getItem(EQ_CACHE_KEY)) || []; } catch { return []; } };
 const saveEqCache  = (d) => localStorage.setItem(EQ_CACHE_KEY, JSON.stringify(d));
